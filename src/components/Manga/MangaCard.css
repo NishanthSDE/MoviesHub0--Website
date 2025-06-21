@@ -1,3 +1,92 @@
+.manga_card {
+  width: 200px;
+  height: 300px;
+  margin-top: 15px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 450px) {
+  .manga_card {
+    width: 280px;
+    height: 420px;
+    border-radius: 16px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+.manga_card:hover {
+  transform: scale(1.05);
+}
+
+.manga_poster {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.manga_details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.manga_card:hover .manga_details {
+  opacity: 1;
+}
+
+.manga_details_heading {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffe400;
+  margin: 0 0 5px;
+}
+
+.manga_date_rate {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.card_emoji {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+.manga_description {
+  font-size: 12px;
+  color: #ccc;
+  font-style: italic;
+}
+
 .heart_button {
   position: absolute;
   top: 10px;
@@ -6,18 +95,17 @@
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
   color: white;
   cursor: pointer;
   user-select: none;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  transition: all 0.3s ease;
 }
 
 .heart_button:hover {
@@ -30,95 +118,4 @@
   color: red;
   background: rgba(255, 0, 0, 0.15);
   border-color: rgba(255, 0, 0, 0.3);
-}
-
-.manga_card {
-  width: 200px;  
-  height: 300px;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-  background-color: #222;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.2s ease;
-}
-
-@media (max-width: 460px) {
-  .manga_card {
-    margin: 10px auto;    
-  }
-}
-
-.manga_card:hover {
-  transform: scale(1.08);
-}
-
-.manga_poster {
-  height: 100%;
-  width: 100%;
-}
-
-.manga_details {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 10px;
-  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  opacity: 0;
-  transition: all 0.7s ease-in-out;
-}
-
-.manga_card:hover .manga_details {
-  opacity: 1;
-}
-
-.manga_details_heading {
-  font-size: 16px;
-  color: #ffe400;
-}
-
-.manga_date_rate {
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 500;
-  margin: 5px 0;
-  color: #ffe400;
-}
-
-.card_emoji {
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-}
-
-.manga_description {
-  font-size: 12px;
-  font-style: italic;
-}
-
-.rec-button {
-  display: inline-block;
-  text-align: center;
-  padding: 6px 12px;
-  margin-top: 6px;
-  background-color: #ffe400;
-  color: #222;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.rec-button:hover {
-  background-color: greenyellow;
 }

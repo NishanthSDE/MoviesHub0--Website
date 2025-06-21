@@ -15,10 +15,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 460px) {
+@media (max-width: 450px) {
   .anime_card {
+    width: 280px;
+    height: 420px;
+    border-radius: 16px;
     margin: 10px auto;
-    
+    display: block;
   }
 }
 
@@ -37,11 +40,14 @@
 }
 
 .anime_details {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 2;
   padding: 12px;
   background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
-  height: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
